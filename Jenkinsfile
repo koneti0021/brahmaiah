@@ -17,6 +17,14 @@ pipeline{
                 }
             }
         }
+        stage('test'){
+            agent {label 'master'}
+            steps {
+                script{
+                    sh "echo hi hello"
+                }
+            }
+        }
     }
 }
     
