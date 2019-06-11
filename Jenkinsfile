@@ -1,5 +1,5 @@
 pipeline{
-    agent master
+    agent any
     stages{
         stage('codecheckout'){
             agent {label 'master'}
