@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('codecheckout'){
+        stage('code checkout'){
             agent {label 'master'}
             steps {
                 script{
