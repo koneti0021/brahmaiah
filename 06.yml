@@ -1,0 +1,9 @@
+---
+- hosts: koneti
+  tasks:
+  - name: installing the latest version of Docker
+    yum:
+     name: docker
+     state: latest
+...
+

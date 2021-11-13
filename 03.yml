@@ -1,0 +1,8 @@
+---
+- hosts: koneti
+  tasks:
+  - name: yum indstall git package
+    yum:
+      name: git
+      state: present
+...
