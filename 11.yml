@@ -1,0 +1,8 @@
+---
+- hosts: koneti
+  tasks:
+  - name: just execute a df -h command
+    shell: "df -h"
+    register: "output"
+  - debug: var=output.stdout_lines
+...

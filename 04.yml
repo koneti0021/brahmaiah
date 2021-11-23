@@ -1,0 +1,8 @@
+---
+- hosts: koneti
+  tasks:
+  - name: install java package in remote server
+    yum:
+     name: java
+     state: latest
+...

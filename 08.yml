@@ -1,0 +1,29 @@
+---
+- hosts: koneti
+  tasks: 
+  - name: Installing the latest vesrion of tomcat
+    yum:
+     name: tomcat
+     state: latest
+  - name: tomcat starting the service 
+    service: 
+         name: tomcat
+         state: started
+  - name: creat /root/tomcat directory
+    file:
+      path: /root/tomcat
+      state: directory
+      mode: 0755
+  - name: download & unarchive
+    unarchive:
+      src: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.72/src/apache-tomcat-8.5.72-src.zip
+      dest: /etc/tomcat
+      remote_src: yes
+      extra_opts: [--strip-components=1]
+  - name: start and enable tomcat service
+    systemd:
+         name: tomcat
+         state: started
+         enabled: true
+         daemon_reload: true
+...  

@@ -1,0 +1,8 @@
+---
+- hosts: koneti
+  tasks:
+  - name: create sample directory 
+    file:
+       path: /root/dev
+       state: directory
+...

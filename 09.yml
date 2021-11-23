@@ -1,0 +1,16 @@
+---
+- hosts: koneti
+  tasks:
+  - name: Installing tomcat of the latest version
+    yum:
+      name: tomcat
+      state: latest
+  - name: start the tomcat application server
+    service:
+         name: tomcat
+         state: start
+  - name: create directory in tomcat
+    file:
+       path: /etc/ansible/dev2
+       touch: directory
+...

@@ -1,0 +1,12 @@
+---
+- hosts: koneti
+  tasks:
+  - name: Installing the latest version of tomcat9
+    yum:
+      name: tomcat9
+      state: present
+  - name: tomcat starting  the service
+    service: 
+        name: tomcat9
+        state: started
+...

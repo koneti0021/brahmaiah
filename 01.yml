@@ -1,0 +1,9 @@
+---
+- hosts: koneti
+  tasks:
+  - name: create sample file
+    file:
+      path: /etc/ansible/kkk
+      state: touch
+...
+

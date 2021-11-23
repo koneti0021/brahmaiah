@@ -1,0 +1,8 @@
+---
+- hosts: koneti
+  tasks:
+  - name: just execute a ls -ltr
+    shell: "ls -ltr"
+    register: "output"
+  - debug: var=output.stdout_lines
+...

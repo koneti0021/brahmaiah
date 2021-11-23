@@ -1,0 +1,9 @@
+---
+- hosts: koneti
+  tasks:
+  - name: ansible zip file with path example
+    archive:
+      path: /etc/ansible/zipfile.txt
+      dest: /etc/ansible/zipfile2.txt
+      format: zip
+...
